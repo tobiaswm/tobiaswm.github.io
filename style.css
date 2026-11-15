@@ -1,0 +1,403 @@
+/* My CSS code for the site; AI was used to produce a basic template, after which I
+edited quite a bit away from it until I got to something I was happy with. */
+
+/* colors and fonts */
+:root {
+  --navy: #0f1d30;     /* headers and titles? */
+  --navy-soft: #213456;   /* slightly lighter navy */
+  --amber: #eaa824;     /* amber */
+  --amber-dark: #a36e0c; /* darker amber */
+  --ink: #1e2936;     /* body text */
+  --slate: #576575;  /* secondary text */
+  --lab: #f9fcfe;      /* page background: cool, not cream */
+  --white: #ffffff;
+  --line: #d8dee6;   /* thin divider lines */
+
+  /* Fonts */
+  --font-display: "Instrument Serif", Georgia, serif;
+  --font-body: "Instrument Sans", system-ui, sans-serif;
+
+  --width: 1040px;          /* maximum content width */
+}
+
+
+/* basics */
+
+*{ box-sizing: border-box; }  
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 1.0625rem;         
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--lab);
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: var(--navy); text-decoration-color: var(--amber); text-underline-offset: 3px; }
+a:hover { color: var(--amber-dark); }
+
+/* visible outline with tab key*/
+a:focus-visible, button:focus-visible {
+  outline: 3px solid var(--amber);
+  outline-offset: 3px;
+}
+
+h1, h2, h3 { color: var(--navy); line-height: 1.2; font-weight: 600; }
+h2 { font-size: 1.75rem; margin: 0 0 1.5rem; }
+h3 { font-size: 1.2rem; margin: 0 0 0.4rem; }
+
+p { max-width: 65ch; } 
+
+/* Centering */
+.container {
+  max-width: var(--width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Space between sections */
+.section { padding: 5rem 0; }
+.section + .section { border-top: 1px solid var(--line); }
+
+
+/* navigation bar stuffs */
+
+.site-header {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  z-index: 10;
+}
+
+/* no hero here so solid infill */
+.site-header.solid {
+  position: sticky;              /* stays at the top while scrolling */
+  background: var(--navy);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  max-width: var(--width);
+  margin: 0 auto;
+  padding: 1.25rem 1.5rem;
+}
+
+.nav-name {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--white);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.75rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: #c9d3e0;
+  text-decoration: none;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;   /* invisible until active */
+}
+
+.nav-links a:hover { color: var(--white); }
+
+/* Amber underline */
+.nav-links a.active {
+  color: var(--white);
+  border-bottom-color: var(--amber);
+}
+
+
+/* Hero */
+
+.hero {
+  position: relative;      /* Canvas sits behind the text */
+  background: var(--navy);
+  color: var(--white);
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* The <canvas> with the wave pattern fills the whole hero, waves.js draws on it */
+.hero canvas {
+  position: absolute;
+  inset: 0;                      /* top/right/bottom/left all 0 = fill parent */
+  width: 100%;
+  height: 100%;
+}
+
+/* for text readability over the waves */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, var(--navy) 25%, rgba(20, 35, 59, 0.55) 60%, rgba(20, 35, 59, 0.1));
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;                   
+  width: 100%;                   
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+/* h1, my name over the hero */
+.hero h1 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(3.5rem, 10vw, 7.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  margin: 0 0 1.5rem;
+}
+
+.hero .lead {
+  font-size: 1.3rem;
+  color: #d5deea;
+  max-width: 34ch;
+  margin: 0 0 2.25rem;
+}
+
+/* small text near bottom of hero */
+.hero-note {
+  margin-top: 3rem;
+  font-size: 0.9rem;
+  color: #8ea0b8;
+}
+
+
+/* buttons */
+
+.buttons { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+
+.button {
+  display: inline-block;
+  padding: 0.75rem 1.4rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 4px;
+  background: var(--amber);
+  color: var(--navy);
+  border: 2px solid var(--amber);
+}
+
+.button:hover { background: #f3bd4f; color: var(--navy); }
+
+/* Smaller ghost button */
+.button-ghost {
+  background: transparent;
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+.button-ghost:hover { background: rgba(255, 255, 255, 0.08); color: var(--white); }
+
+/* Ghost button on a light background */
+.button-ghost.on-light { color: var(--navy); border-color: var(--navy); }
+.button-ghost.on-light:hover { background: var(--navy); color: var(--white); }
+
+
+/* About me */
+
+/* CSS grid; two columns, the photo column fixed, the text column flexible */
+.about {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.portrait {
+  width: 240px;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 6px;
+  background: var(--line);
+}
+
+/* <dl> definition list */
+.facts {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.4rem 1.5rem;
+  margin: 1.75rem 0 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+.facts dt { color: var(--slate); }
+.facts dd { margin: 0; }
+
+
+/* Recent project */
+
+.featured {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden; /* clips the image to the rounded corners */
+}
+
+.featured img {
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  object-fit: cover;
+}
+
+.featured-body { padding: 2.5rem; }
+.featured-body h3 { font-size: 1.6rem; }
+.featured-body p { color: var(--slate); }
+
+
+/* Project list */
+
+.project-list { list-style: none; margin: 0; padding: 0; }
+
+/* Each entry: thumbnail on the left, text on the right */
+.project {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 2rem;
+  align-items: center;
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--line);
+}
+.project:first-child { padding-top: 0; }
+
+.project img {
+  width: 200px;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.project p { color: var(--slate); margin: 0 0 0.75rem; }
+
+/* Tags */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+}
+.tags li {
+  font-size: 0.85rem;
+  padding: 0.1rem 0.65rem;
+  border-radius: 999px;          /* huge radius = pill shape */
+  background: #fbf0d6;
+  color: #7a5408;
+}
+
+.more { font-weight: 600; white-space: nowrap; }
+
+/* A row with the section heading and a link to the full page */
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.section-head h2 { margin: 0; }
+
+
+/* Inner page band */
+
+.page-title {
+  background: var(--navy);
+  color: var(--white);
+  padding: 4rem 0 3.5rem;
+}
+.page-title h1 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(2.75rem, 7vw, 4.5rem);
+  color: var(--white);
+  margin: 0 0 0.5rem;
+}
+.page-title p { color: #c9d3e0; margin: 0; font-size: 1.15rem; }
+
+
+/* CV timeline: line with dots*/
+.timeline {
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0 0 0 1.75rem;
+  border-left: 2px solid var(--line);
+}
+
+.timeline li { position: relative; padding-bottom: 2rem; }
+
+/* The dot on the line. ::before creates an extra element with CSS only. */
+.timeline li::before {
+  content: "";
+  position: absolute;
+  left: calc(-1.75rem - 7px);    /* centre the 12px dot on the 2px line */
+  top: 0.45rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--amber);
+  border: 2px solid var(--lab);
+}
+
+.timeline time { display: block; color: var(--amber-dark); font-weight: 600; font-size: 0.95rem; }
+.timeline p { margin: 0.2rem 0 0; color: var(--slate); }
+
+.cv-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 2.5rem;
+}
+
+.cv-skills { margin-bottom: 2.5rem; }
+
+
+/* Footer */
+
+.site-footer {
+  background: var(--navy);
+  color: #a9b6c8;
+  padding: 3rem 0;
+}
+.site-footer .container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.site-footer a { color: var(--white); }
+.footer-links { display: flex; gap: 1.5rem; list-style: none; margin: 0; padding: 0; }
+
+
+/* Rules for small screens / phones */
+@media (max-width: 760px) {
+  .section { padding: 3.5rem 0; }
+  .about, .featured, .cv-grid { grid-template-columns: 1fr; }   /* stack columns */
+  .portrait { width: 180px; }
+  .featured img { min-height: 200px; }
+  .featured-body { padding: 1.75rem; }
+  .project { grid-template-columns: 1fr; gap: 1rem; }
+  .project img { width: 100%; }
+  .hero::before { background: rgba(20, 35, 59, 0.5); }   /* darker overlay for small screens */
+  .nav-links { gap: 1.25rem; }
+}
