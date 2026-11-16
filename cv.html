@@ -1,37 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" href="/photonfavicon.svg" type="image/svg+xml">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects</title>
-  <meta name="description" content="Physics and engineering projects by Tobias, TU Delft.">
+  <title>CV – Tobias Wertheim</title>
+  <meta name="description" content="CV of Tobias Wertheim, Applied Physics student at TU Delft: education, projects, research papers and experience.">
+  <link rel="icon" href="/photonfavicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;600&family=Instrument+Serif&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="cv.css">
 </head>
+<body>
 
-    <!-- Navigation bar stuff-->
-  <header class='site-header'>
-    <nav class='nav'>
-      <a href='index.html' class='nav-name'></a>
-      <ul class='nav-links'>
-        <li><a href='index.html'>Home</a></li>
-        <li><a href='projects.html'>Projects</a></li>
-        <li><a href='Research.html'>Research</a></li>
-        <li><a href='cv.html' class='active'>CV</a></li>
+  <!-- Navigation bar stuff-->
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.html" class="nav-name"></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="Research.html">Research</a></li>
+        <li><a href="cv.html" class="active">CV</a></li>
       </ul>
     </nav>
   </header>
 
-  <section id="cv">
-  <h2>My CV</h2>
-  <iframe src="/cvtwertheim.pdf" class="cv-frame" title="CV"></iframe>
-  <p><a href="/cvtwertheim.pdf">Open CV in a new tab</a></p>
-</section>
-  <a href="/cvtwertheim.pdf" download="/cvtwertheim.pdf" class="button">Download CV</a>
-  
+  <main class="section">
+    <div class="container cv">
+
+      <header class="cv-head">
+        <div>
+          <h1 class="cv-name">Tobias Wertheim</h1>
+          <p class="cv-role">Applied Physics student · TU Delft</p>
+          <p class="cv-about">
+            Interested in nanobiology research, quantum computing and general engineering.
+          </p>
+          <ul class="cv-contact">
+            <li>Delft, Netherlands</li>
+            <li><a href="mailto:tobywertheimmail@gmail.com">Email</a></li>
+            <li><a href="https://www.linkedin.com/in/tobias-wertheim/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://github.com/tobiaswm" target="_blank" rel="noopener">GitHub</a></li>
+          </ul>
+        </div>
+        <a href="/files/cvtwertheim.pdf" download="Tobias_Wertheim_CV.pdf" class="button">Download PDF</a>
+      </header>
+
+      <!-- edu -->
+      <section class="cv-section">
+        <h2 class="cv-title">Education</h2>
+        <ul class="cv-list">
+
+          <li class="cv-entry">
+            <p class="cv-date">2023 – present</p>
+            <div>
+              <h3>BSc Applied Physics</h3>
+              <p class="cv-where">Delft University of Technology · Delft</p>
+              <p>Minor in Semiconductor Technology, including clean room and lithography experience.</p>
+              <p class="cv-sub">Research papers</p>
+              <ul class="cv-bullets">
+                <li>Violation of Bell's Inequality with Entangled Photon Pairs</li>
+                <li>Analyzing Higher-Order Gravitational Interactions with Perturbation Theory</li>
+                <li>Morin Transition Temperature of α-Hematite using Mössbauer Spectroscopy</li>
+                <li>Effects of Magnetic Disturbances on the Phenom Pro Scanning Electron Microscope using Applied Magnetic Fields</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="cv-entry">
+            <p class="cv-date">2021 – 2023</p>
+            <div>
+              <h3>VWO diploma, <em>cum laude</em></h3>
+              <p class="cv-where">Visser 't Hooft Lyceum · Leiden</p>
+              <p>Science &amp; Technology profile. Final dissertation on bacteriophages as an alternative to antibiotics in modern medicine; papers on quantum computing and analytical coding.</p>
+            </div>
+          </li>
+
+          <li class="cv-entry">
+            <p class="cv-date">2015 – 2023</p>
+            <div>
+              <h3>HAVO diploma, <em>cum laude</em></h3>
+              <p class="cv-where">Visser 't Hooft Lyceum · Leiden</p>
+              <p>Focus on biology and health.</p>
+            </div>
+          </li>
+
+        </ul>
+      </section>
+
+      <!-- projects -->
+      <section class="cv-section">
+        <h2 class="cv-title">Projects</h2>
+        <ul class="cv-list">
+
+          <li class="cv-entry">
+            <p class="cv-date">2025 – present</p>
+            <div>
+              <h3><a href="nmrobserver.html">Nuclear Magnetic Resonance Device</a></h3>
+              <p>Observing nuclear magnetic resonance using neodymium permanent magnets and an OCXO + DDS-generated RF pulse.</p>
+            </div>
+          </li>
+
+          <li class="cv-entry">
+            <p class="cv-date">Aug – Nov 2024</p>
+            <div>
+              <h3>Momentum Measurement Instrument</h3>
+              <p>Designed and built an instrument that measures momentum using laser interference.</p>
+            </div>
+          </li>
+
+          <li class="cv-entry">
+            <p class="cv-date">Apr – Jun 2023</p>
+            <div>
+              <h3>Cloud Chamber</h3>
+              <p>Designed and built a cloud chamber to observe tracks left by radioactive decay, using liquid nitrogen and saturated ethanol vapour.</p>
+            </div>
+          </li>
+
+        </ul>
+      </section>
+
+      <!-- experience -->
+      <section class="cv-section">
+        <h2 class="cv-title">Experience</h2>
+        <ul class="cv-list">
+
+          <li class="cv-entry">
+            <p class="cv-date">2024 – 2025</p>
+            <div>
+              <h3>Bar Manager &amp; Bartender</h3>
+              <p class="cv-where">Snookercafé Peperstraat · Delft</p>
+              <p>Customer contact, finances and restocking; responsible for health &amp; safety compliance.</p>
+            </div>
+          </li>
+
+          <li class="cv-entry">
+            <p class="cv-date">2021 – 2023</p>
+            <div>
+              <h3>Private Tutor</h3>
+              <p class="cv-where">Athena Education · Leiden</p>
+              <p>Tutored mathematics, physics, chemistry and biology.</p>
+            </div>
+          </li>
+
+          <li class="cv-entry">
+            <p class="cv-date">Apr – May 2018</p>
+            <div>
+              <h3>Programming Intern</h3>
+              <p class="cv-where">Private employer · Bangor, United States</p>
+              <p>Web development in PHP, HTML and CSS.</p>
+            </div>
+          </li>
+
+        </ul>
+      </section>
+
+      <!-- awards -->
+      <section class="cv-section">
+        <h2 class="cv-title">Honours &amp; Awards</h2>
+        <ul class="cv-list">
+
+          <li class="cv-entry">
+            <p class="cv-date">2023</p>
+            <div>
+              <h3>International Baccalaureate HL</h3>
+              <p>Higher Level diploma, final grade 4.</p>
+            </div>
+          </li>
+
+          <li class="cv-entry">
+            <p class="cv-date">2023</p>
+            <div>
+              <h3>1st Place, Biology Olympiad</h3>
+              <p class="cv-where">Visser 't Hooft Lyceum</p>
+            </div>
+          </li>
+
+          <li class="cv-entry">
+            <p class="cv-date">2021</p>
+            <div>
+              <h3>International Baccalaureate SL</h3>
+              <p>Standard Level diploma, final grade 6.</p>
+            </div>
+          </li>
+
+        </ul>
+      </section>
+
+      <!-- skills -->
+      <section class="cv-section">
+        <h2 class="cv-title">Skills</h2>
+        <div class="cv-skills">
+          <div>
+            <h3>Programming &amp; tools</h3>
+            <ul class="tags">
+              <li>Python</li><li>LaTeX</li><li>HTML</li><li>CSS</li><li>PHP</li><li>Arduino</li><li>Excel</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Physics</h3>
+            <ul class="tags">
+              <li>Mathematical physics</li><li>Computational physics</li><li>Electronics</li><li>Biology</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Other</h3>
+            <ul class="tags">
+              <li>Analytical thinking</li><li>Communicating mathematics</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
   <footer class="site-footer">
     <div class="container">
       <p>&copy; 2026 Tobias Wertheim</p>
