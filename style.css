@@ -69,9 +69,10 @@ p { max-width: 65ch; }
   top: 0; left: 0; right: 0;
   z-index: 10;
 }
+/* logo gif wave*/
 .logo img {
-  height: 36px;
-  width: 36px;
+  height: 56px;
+  width: 56px;
   display: block;
 }
 .logo .logo-anim {
@@ -82,6 +83,13 @@ p { max-width: 65ch; }
 }
 .logo:hover .logo-anim {
   display: block;
+}
+
+/* frame for research pdfs */
+.frame_pdf {
+  width: 100%;
+  height: 90vh;
+  border: none;
 }
 
 /* no hero here so solid infill */
