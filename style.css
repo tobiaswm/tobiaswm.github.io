@@ -344,6 +344,12 @@ p { max-width: 65ch; }
   border-left: 2px solid var(--line);
 }
 
+.cv-frame {
+  width: 100%;
+  height: 90vh;
+  border: none;
+}
+
 .timeline li { position: relative; padding-bottom: 2rem; }
 
 /* The dot on the line. ::before creates an extra element with CSS only. */
