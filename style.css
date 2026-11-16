@@ -69,6 +69,20 @@ p { max-width: 65ch; }
   top: 0; left: 0; right: 0;
   z-index: 10;
 }
+.logo img {
+  height: 36px;
+  width: 36px;
+  display: block;
+}
+.logo .logo-anim {
+  display: none;
+}
+.logo:hover .logo-still {
+  display: none;
+}
+.logo:hover .logo-anim {
+  display: block;
+}
 
 /* no hero here so solid infill */
 .site-header.solid {
