@@ -52,15 +52,15 @@ if (canvas) {
         const r1 = Math.hypot(x - s1.x, y - s1.y);
         const r2 = Math.hypot(x - s2.x, y - s2.y);
 
-        // Add the two waves, then square for intensity
+        // sum waves, then square for intensity
         const psi = Math.cos(k * r1 - omega * t) + Math.cos(k * r2 - omega * t);
         let intensity = (psi * psi) / 4;
 
-        // Intensity slowly fades away
+        // intensity slowly fades away with factor 0.9
         const fade = Math.exp(-(r1 + r2) / (width * 0.9));
         intensity *= fade;
 
-        // Mix navy and amber depending on intensity
+        // mix navy and amber depending on intensity
         const i = (y * width + x) * 4;
         data[i]     = NAVY[0] + (AMBER[0] - NAVY[0]) * intensity;
         data[i + 1] = NAVY[1] + (AMBER[1] - NAVY[1]) * intensity;
@@ -71,11 +71,11 @@ if (canvas) {
     ctx.putImageData(image, 0, 0);
   }
 
-  // Loop that results in an animation
+  // loop so it becomes animation
   function loop() {
     t += 1;
     if (target) {
-      // Move 5% of the remaining distance each frame, for a smooth motion
+      // smooth motion of waves
       sources[1].x += (target.x - sources[1].x) * 0.05;
       sources[1].y += (target.y - sources[1].y) * 0.05;
     }
